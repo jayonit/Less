@@ -35,3 +35,7 @@ function less_scripts()  {
   
 }
 add_action( 'wp_enqueue_scripts', 'less_scripts' );
+function ct_get_avatar($avatar) {
+    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+    return $avatar;}
+add_filter( 'get_avatar', 'ct_get_avatar', 10, 3 );
